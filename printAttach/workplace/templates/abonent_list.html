@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div>
+        <div>
+
+            <a href="{% url 'abonents-create' %}">Добавить абонента</a>
+
+        </div>
+        <div>
+            <div>
+                <h4>Список абонентов:</h4>
+            </div>
+            {% for obj in object_list %}
+                <div>
+                    {{ obj.name }} |  <a href='{% url 'abonents-detail' obj.id %}'>Посмотреть детали</a>
+
+                </div>
+            {% endfor %}
+        </div>
+
+
+
+
+    </div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <div>
+        <p>Полное наименование: {{ object.name }}</p>
+        <p>Юридический адрес: {{ object.adres }}</p>
+        <p>Банковские реквизиты: {{ object.bank }}</p>
+        <p>УНП : {{ object.unp }}</p>
+        <p>Контактная/дополнительная информация: {{ object.kontact }}</p>
+        <p>Представитель Абонента, уполномоченный подписать настоящее Приложение:</p>
+        <p>Ф.И.О.: {{ object.preabon }}</p>
+        <p>Документ, удостоверяющий личность: {{ object.pasport }}</p>
+    </div>
+    <a href='{% url 'abonents-list' %}'>Назад</a> | <a href='{% url 'abonents-update' object.id %}'>Редактировать</a> |
+<a href='{% url 'abonents-delete' object.id %}'>Удалить</a>
+
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <div>
+        <p>Метод расчётов: {{ object.method }}</p>
+        <p>Тарифный план: {{ object.tarif }}</p>
+        <p>Способ и адрес доставки счетов (основной): {{ object.schet }}</p>
+        <p>Валюта платежа : {{ object.money }}</p>
+    </div>
+    <a href='{% url 'tarifs-list' %}'>Назад</a> | <a href='{% url 'tarifs-update' object.id %}'>Редактировать</a> |
+<a href='{% url 'tarifs-delete' object.id %}'>Удалить</a>
+
+{% endblock content %}

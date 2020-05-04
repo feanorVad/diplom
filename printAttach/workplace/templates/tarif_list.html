@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div>
+        <div>
+
+            <a href="{% url 'tarifs-create' %}">Добавить абонента</a>
+
+        </div>
+        <div>
+            <div>
+                <h4>Project list:</h4>
+            </div>
+            {% for obj in object_list %}
+                <div>
+                    {{ obj.tarif }} |  <a href='{% url 'tarifs-detail' obj.id %}'>Посмотреть детали</a>
+
+                </div>
+            {% endfor %}
+        </div>
+
+        {% comment "Optional note" %}
+            <p>Commented out text with </p>
+        {% endcomment %}
+
+
+    </div>
+{% endblock content %}
